@@ -8,23 +8,21 @@ fetch('https://api.content.tripadvisor.com/api/v1/location/20936952/photos?key=1
     return response.json();
   })
   .then(data => {
-    const firstImageData = data.data[0]; // Get the first item from the data array
-
-    const imageUrl = firstImageData.images.thumbnail.url; // Extract the URL of the thumbnail
+    data.data.forEach(item => {
+    const imageUrl = item.images.thumbnail.url; // Extract the URL of the thumbnail
 
     // Create a new img element
     const imgElement = document.createElement('img');
     imgElement.src = imageUrl; // Set the source of the image to the URL we extracted
-    imgElement.alt = firstImageData.caption; // Use the caption as the alt text for accessibility
-
-    // Optionally, set the width and height
-    imgElement.width = firstImageData.images.thumbnail.width;
-    imgElement.height = firstImageData.images.thumbnail.height;
+    imgElement.alt = item.caption || 'Thumbnail image'; // Use the caption as the alt text for accessibility
+    imgElement.classList.add('thumbnail-image'); // Assign a class for styling
 
     // Append the img element to the div where you want the image to appear
     const imageContainer = document.getElementById('image-container');
-    if (imageContainer) { // Check if the element exists to avoid null errors
+    if (imageContainer) {
       imageContainer.appendChild(imgElement);
+    }
+  });
     }
   })
   .catch(err => {
