@@ -1,4 +1,4 @@
-const options = {method: 'GET', headers: {accept: 'application/json'}};
+/* const options = {method: 'GET', headers: {accept: 'application/json'}};
 
 fetch('https://api.content.tripadvisor.com/api/v1/location/20936952/photos?key=11D6F5DEDB084B01BC1E8972CDD1E662&language=de', options)
   .then(response => {
@@ -24,6 +24,40 @@ fetch('https://api.content.tripadvisor.com/api/v1/location/20936952/photos?key=1
     }
   });
     }
+  })
+  .catch(err => {
+    console.error('Fetch error:', err);
+  });
+*/
+
+
+const options = {method: 'GET', headers: {accept: 'application/json'}};
+
+fetch('https://api.content.tripadvisor.com/api/v1/location/20936952/photos?key=11D6F5DEDB084B01BC1E8972CDD1E662&language=de', options)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Make sure the data.data is an array and has more than one image
+    console.log(data); // Log the data to the console to check what you received
+
+    // Assuming data.data is an array of images
+    data.data.forEach(item => {
+      // Extract the URL for each image
+      const imageUrl = item.images.thumbnail.url;
+
+      // Create a new img element for each image
+      const imgElement = document.createElement('img');
+      imgElement.src = imageUrl; // Set the source of the image
+      imgElement.alt = item.caption; // Set the alt text
+      imgElement.classList.add('thumbnail-image'); // Add any necessary classes
+
+      // Append the img element to the div
+      document.getElementById('image-container').appendChild(imgElement);
+    });
   })
   .catch(err => {
     console.error('Fetch error:', err);
