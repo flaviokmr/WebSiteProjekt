@@ -4,6 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ulm City-Butler</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="cards.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 </head>
 <body>
 
@@ -23,28 +26,106 @@
     <main>
         <section id="attractions">
             <h2>Attractions in Ulm</h2>
+            <h3 class="text_title">Event Calendar</h3>
+            <p class="text">Willkommen beim Event-Kalender - Ihrem Fenster zu den aufkommenden Highlights in Ulm.
+                Mit unserem sorgfältig kuratierten Kalender bleiben Sie immer im Bilde über die neuesten und aufregendsten Veranstaltungen in unserer Stadt.
+                Ganz gleich, ob Sie kulturelle Festivitäten, musikalische Darbietungen oder inspirierende Vorträge suchen, hier finden Sie eine umfassende Übersicht über alle bevorstehenden Events.
+
+                Verpassen Sie keine Gelegenheit, das reiche kulturelle Angebot von Ulm zu erleben.
+                Unser Kalender aktualisiert sich laufend, um Ihnen die aktuellsten Informationen zu Zeiten und Veranstaltungsorten zu bieten.
+                Planen Sie voraus und sichern Sie sich die Möglichkeit, Teil des pulsierenden städtischen Lebens zu sein.</p>
+            <div id="calendar"></div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+            <script src="calendar.js"></script>
+            
         </section>
 
         <section id="restaurants">
-            <h2>Restaurants in Ulm</h2>
-            
-            <h4>Die Halle</h4>
-            <p>Im Herzen von Ulm gelegen, bietet "Die Halle" eine kulinarische Reise, die die Essenz lokaler und internationaler Küche einfängt.
-                Dieses lebendige Restaurant zeichnet sich durch Gerichte aus, die sowohl optisch beeindruckend als auch köstlich sind.
-                Mit einem Schwerpunkt auf frischen, lokal bezogenen Zutaten, steht das Menü von Die Halle für Qualität und Kreativität.
-                Die einladende Atmosphäre, kombiniert mit einer modern-rustikalen Dekoration, macht es zum perfekten Ort für jede Gelegenheit, von zwanglosen Mittagessen bis zu besonderen Feierlichkeiten.
-            </p>
-            <div id="image-container"></div>
-            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-            <div class="elfsight-app-9c39b6b1-e723-4ddf-8394-0fed43560ad4" data-elfsight-app-lazy></div>
+            <h2 class="cards_title">Hello vro</h2>
+
+            <div id="app" class="container">
+              <card data-image="Fotos/dining-area.jpg">
+                <h1 slot="header">Die Halle</h1>
+                <p id="text_cards" slot="content">Entdecken Sie moderne Gaumenfreuden in der stilvollen und entspannten Atmosphäre von 'Die Halle' in Ulm.</p>
+              </card>
+              <card data-image="Fotos/barfus.jpg">
+                <h1 slot="header">Barfüßer</h1>
+                <p id="text_cards" slot="content">Erleben Sie traditionelle schwäbische Küche und hausgebrautes Bier in der gemütlichen Atmosphäre der Barfüßer Hausbrauerei Ulm.</p>
+              </card>
+              <card data-image="Fotos/omw.jpg">
+                <h1 slot="header">OMW!</h1>
+                <p id="text_cards" slot="content">Genießen Sie eine gemütliche Auszeit bei köstlichem Kaffee und hausgemachten Kuchen in 'OMW! Das kleine Café'.</p>
+              </card>
+              <card data-image="Fotos/qmuh-ulm.jpg">
+                <h1 slot="header">Qmuh</h1>
+                <p id="text_cards" slot="content">Genießen Sie einzigartige Burger und erfrischende Drinks im lebhaften Ambiente des QMUH Ulm.</p>
+              </card>
+              <script src="cards.js"></script>
+            </div>
+
+
+
+            <div>
+                <h3 class="text_title">Die Halle</h3>
+                <p class="text">Im Herzen von Ulm gelegen, bietet "Die Halle" eine kulinarische Reise, die die Essenz lokaler und internationaler Küche einfängt.
+                    Dieses lebendige Restaurant zeichnet sich durch Gerichte aus, die sowohl optisch beeindruckend als auch köstlich sind.
+                    Mit einem Schwerpunkt auf frischen, lokal bezogenen Zutaten, steht das Menü von Die Halle für Qualität und Kreativität.
+                    Die einladende Atmosphäre, kombiniert mit einer modern-rustikalen Dekoration, macht es zum perfekten Ort für jede Gelegenheit, von zwanglosen Mittagessen bis zu besonderen Feierlichkeiten.
+                </p>
+                <div id="image-container"></div>
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-9c39b6b1-e723-4ddf-8394-0fed43560ad4" data-elfsight-app-lazy></div>
+            </div>
+
+            <div>
+                <h3 class="text_title">OMW! Das kleine Café!</h3>
+                <p class="text">Besuchen Sie 'OMW! Das kleine Café!' in Ulm, ein charmantes kleines Lokal, das für seine gemütliche Atmosphäre und seine exzellente Auswahl an Kaffeespezialitäten und hausgemachten Kuchen bekannt ist.
+                    Dieses Café ist der perfekte Ort für eine entspannte Pause während eines Stadtbummels oder für ein herzliches Treffen mit Freunden.
+                    Genießen Sie die liebevoll zubereiteten Leckereien und die warme, einladende Umgebung, die dieses Café zu einem Muss für jeden Besucher und Einheimischen macht.
+                </p>
+            </div>
         </section>
 
         <section id="accomodations">
             <h2>Accomodation in Ulm</h2>
+            </br>
+            <p class="text">
+                Hier finden Sie, ein paar Hotels die in Ulm eine gute Lage haben.
+                Mit der Karte unten, können Sie berechnen wie Weit die Fahrt zu anderen Punkte in Ulm ist.
+            </p>
+            </br>
+            <div class="accomodationMap">
+                <iframe
+                    width="600"
+                    height="450"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDBLGpLWWwnnw1lrSly_EMtJZDUv1DytZQ&language=de&q=MaritimHotel,Ulm">
+                </iframe>
+            </div>
         </section>
 
         <section id="contacts">
             <h2>Contacts in Ulm</h2>
+            <div class="form_container">  
+                <form id="form" action="" method="post">
+                  <h3>Kontakt-Form</h3>
+                  <h4>Setze dich mit uns im Kontakt!</h4>
+                  <fieldset>
+                    <input placeholder="Dein Name" type="text" tabindex="1" required autofocus>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Deine Email Addresse" type="email" tabindex="2" required>
+                  </fieldset>
+                  <fieldset>
+                    <textarea placeholder="Schreibe deine Nachricht hier..." tabindex="5" required></textarea>
+                  </fieldset>
+                  <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                  </fieldset>
+                </form>
         </section>
     </main>
     </div>
