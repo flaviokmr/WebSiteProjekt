@@ -321,19 +321,19 @@
   
   !function() {
     var data = [
-      { eventName: 'Tag der offenen Tür bei den städtischen Einrichtungen', calendar: 'Work', color: 'orange' },
-      { eventName: 'Wissenschaftstag', calendar: 'Work', color: 'orange' },
-      { eventName: 'Galerierundgang', calendar: 'Work', color: 'orange' },
-      { eventName: 'Yoga im Park', calendar: 'Work', color: 'orange' },
+      { eventName: 'Tag der offenen Tür bei den städtischen Einrichtungen', calendar: 'Leisure', color: 'orange' },
+      { eventName: 'Wissenschaftstag', calendar: 'Leisure', color: 'orange' },
+      { eventName: 'Galerierundgang', calendar: 'Leisure', color: 'orange' },
+      { eventName: 'Yoga im Park', calendar: 'Leisure', color: 'orange' },
   
       { eventName: 'Game-Night beim Waschbär', calendar: 'Abende', color: 'blue' },
       { eventName: 'Cultur-Abend in der Halle', calendar: 'Abende', color: 'blue' },
       { eventName: 'Vorglühbar', calendar: 'Abende', color: 'blue' },
   
-      { eventName: 'SSV Spieltag', calendar: 'Kids', color: 'yellow' },
-      { eventName: 'Cultural Exchange', calendar: 'Kids', color: 'yellow' },
-      { eventName: 'Buch-Club Event', calendar: 'Kids', color: 'yellow' },
-      { eventName: 'Street Food Abend', calendar: 'Kids', color: 'yellow' },
+      { eventName: 'SSV Spieltag', calendar: 'Stadt-Evente', color: 'yellow' },
+      { eventName: 'Cultural Exchange', calendar: 'Stadt-Evente', color: 'yellow' },
+      { eventName: 'Buch-Club Event', calendar: 'Stadt-Evente', color: 'yellow' },
+      { eventName: 'Street Food Abend', calendar: 'Stadt-Evente', color: 'yellow' },
   
       { eventName: 'Stadtfest', calendar: 'Other', color: 'green' },
       { eventName: 'Gourmet-Food-Festival', calendar: 'Other', color: 'green' },
